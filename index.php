@@ -17,31 +17,33 @@ $data = ambildata($query);
 <body>
     <h1>DATA MAHASISWA</h1>
     <br>
+    <a href="tambahmahasiswa.php">tambah</a>
+    <br>
     <table border="1" cellspacing="0" cellpadding="5">
         <thead>
             <th>No</th>
             <th>NIM</th>
             <th>Nama</th>
             <th>No Telp</th>
+            <th>Tanggal Lahir</th>
+            <th>Email</th>
         </thead>
 
         <tbody>
-            <?php foreach ($data as $key => $value) :?>
-                <tr>
-                    <td>
-                        <?= $key + 1?>
-                    </td>
-                    <td>
-                        <?= $value["nim"]?>
-                    </td>
-                    <td>
-                        <?= $value["nama"]?>
-                    </td>
-                    <td>
-                        <?= $value["telp"]?>
-                    </td>
+          <?php
+          $i = 1;
+          foreach ( $data as $d) :?>
+          <tr>
+            <td><?php echo $i ++; ?></td>
+            <td><?php echo $d ["nim"]; ?></td>
+            <td><?php echo $d ["nama"]; ?></td>
+            <td><?php echo $d ["telp"]; ?></td>
+            <td><?php echo $d ["tanggallahir"]; ?></td>
+            <td><?php echo $d ["email"]; ?></td>
+          </tr>
+          <?php endforeach?>
                 </tr>
-            <?php endforeach?>
+      
         </tbody>
     </table>
 </body>

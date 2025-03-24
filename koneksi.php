@@ -1,12 +1,12 @@
 <?php
 
 $servername = "localhost";
-$dbname = "4ami";
+$database = "4ami";
 $username = "root";
 $password = "";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password, $database);
 
 
 function ambildata($query) {
@@ -17,7 +17,6 @@ function ambildata($query) {
         $data[] = $baris;
     }
     return $data;
-    
 }
 
 ?>

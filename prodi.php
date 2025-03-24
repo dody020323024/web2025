@@ -20,28 +20,24 @@ $data = ambildata($query);
     <table border="1" cellspacing="0" cellpadding="5">
         <thead>
             <th>No</th>
-            <th>Nama Prodi</th>
-            <th>Nama Kaprodi</th>
-            <th>Jurusan</th>
+            <th>NIM</th>
+            <th>Nama</th>
+            <th>Telp</th>
         </thead>
 
         <tbody>
-            <?php foreach ($data as $key => $value) :?>
-                <tr>
-                    <td>
-                        <?= $key + 1?>
-                    </td>
-                    <td>
-                        <?= $value["nama"]?>
-                    </td>
-                    <td>
-                        <?= $value["kaprodi"]?>
-                    </td>
-                    <td>
-                        <?= $value["jurusan"]?>
-                    </td>
+          <?php
+          $i = 1;
+          foreach ( $data as $d) :?>
+          <tr>
+            <td><?php echo $i ++; ?></td>
+            <td><?php echo $d ["nim"]; ?></td>
+            <td><?php echo $d ["nama"]; ?></td>
+            <td><?php echo $d ["telp"]; ?></td>
+          </tr>
+          <?php endforeach?>
                 </tr>
-            <?php endforeach?>
+      
         </tbody>
     </table>
 </body>
