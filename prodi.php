@@ -20,9 +20,9 @@ $data = ambildata($query);
     <table border="1" cellspacing="0" cellpadding="5">
         <thead>
             <th>No</th>
-            <th>NIM</th>
-            <th>Nama</th>
-            <th>Telp</th>
+            <th>nama</th>
+            <th>kaprodi</th>
+            <th>jurusan</th>
         </thead>
 
         <tbody>
@@ -31,9 +31,9 @@ $data = ambildata($query);
           foreach ( $data as $d) :?>
           <tr>
             <td><?php echo $i ++; ?></td>
-            <td><?php echo $d ["nim"]; ?></td>
             <td><?php echo $d ["nama"]; ?></td>
-            <td><?php echo $d ["telp"]; ?></td>
+            <td><?php echo $d ["kaprodi"]; ?></td>
+            <td><?php echo $d ["jurusan"]; ?></td>
           </tr>
           <?php endforeach?>
                 </tr>
