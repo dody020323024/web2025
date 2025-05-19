@@ -18,14 +18,9 @@ include "tempalates/sidebar.php";
             <!--begin::Row-->
             <div class="row">
                 <div class="col-sm-6">
-                    <h3 class="mb-0">Dashboard</h3>
+                    <h3 class="mb-0">Mahasiswa</h3>
                 </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-end">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                    </ol>
-                </div>
+                
             </div>
             <!--end::Row-->
         </div>
@@ -42,64 +37,66 @@ include "tempalates/sidebar.php";
                     <div class="card mb-4">
                         <div class="card-header">
                             <h3 class="card-title">Data mahasiswa</h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <div class="card-body">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>NIM</th>
-                                        <th>Nama</th>
-                                        <th>No Telp</th>
-                                        <th>Tanggal Lahir</th>
-                                        <th>Email</th>
-                                        <th>prodi</th>
-                                        <th>aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    $i = 1;
-                                    foreach ($data as $d) : ?>
+                            <div class=" card-tools">
+                                <a href="tambahmahasiswa.php" class="btn btn-primary">tambah</a>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <thead>
                                         <tr>
-                                            <td><?php echo $i++; ?></td>
-                                            <td><?php echo $d["nim"]; ?></td>
-                                            <td><?php echo $d["nama"]; ?></td>
-                                            <td><?php echo $d["telp"]; ?></td>
-                                            <td><?php echo $d["tanggallahir"]; ?></td>
-                                            <td><?php echo $d["email"]; ?></td>
-                                            <td><?php echo $d["prodi"]; ?></td>
-
-                                            <td>
-                                                <a href="editmahasiswa.php?nim=<?= $d['nim']; ?>" class="btn btn-warning">edit </a>
-                                                <a href="hapusmahasiswa.php?nim=<?= $d['nim']; ?>" class="btn btn-danger"
-                                                    onclick="return confirm('bujur jue kah ikam neh hendak mehepos?')">hapus</a>
-                                            </td>
+                                            <th>No</th>
+                                            <th>NIM</th>
+                                            <th>Nama</th>
+                                            <th>No Telp</th>
+                                            <th>Tanggal Lahir</th>
+                                            <th>Email</th>
+                                            <th>prodi</th>
+                                            <th>aksi</th>
                                         </tr>
-                                    <?php endforeach ?>
-                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $i = 1;
+                                        foreach ($data as $d) : ?>
+                                            <tr>
+                                                <td><?php echo $i++; ?></td>
+                                                <td><?php echo $d["nim"]; ?></td>
+                                                <td><?php echo $d["nama"]; ?></td>
+                                                <td><?php echo $d["telp"]; ?></td>
+                                                <td><?php echo $d["tanggallahir"]; ?></td>
+                                                <td><?php echo $d["email"]; ?></td>
+                                                <td><?php echo $d["prodi"]; ?></td>
 
-                                </tbody>
-                            </table>
+                                                <td>
+                                                    <a href="editmahasiswa.php?nim=<?= $d['nim']; ?>" class="btn btn-warning">edit </a>
+                                                    <a href="hapusmahasiswa.php?nim=<?= $d['nim']; ?>" class="btn btn-danger"
+                                                        onclick="return confirm('bujur jue kah ikam neh hendak mehepos?')">hapus</a>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach ?>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+
                         </div>
-                        <!-- /.card-body -->
+                        <!-- /.card -->
 
+                        <!-- /.card -->
                     </div>
-                    <!-- /.card -->
+                    <!-- /.col -->
 
-                    <!-- /.card -->
+                    <!-- /.col -->
                 </div>
-                <!-- /.col -->
-
-                <!-- /.col -->
+                <!--begin::Row-->
+                <!-- /.row (main row) -->
             </div>
-            <!--begin::Row-->
-            <!-- /.row (main row) -->
+            <!--end::Container-->
         </div>
-        <!--end::Container-->
-    </div>
-    <!--end::App Content-->
+        <!--end::App Content-->
 </main>
 
 
